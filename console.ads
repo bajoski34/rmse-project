@@ -9,7 +9,7 @@ package  Console
 is
    pragma Elaborate_Body;
    
-   IndicatorState: Boolean;
+   IndicatorState: Boolean; -- tells the driver whether or not the doors are locked.
    AutoState:      Boolean; -- Set to True when Auto_Mode enabled and False when Manual_Mode enabled.
    
    procedure Enable_Indicator
@@ -43,4 +43,3 @@ is
      Depends => (Auto_Mode_Enabled'Result => AutoState);
    
 end Console;
-
