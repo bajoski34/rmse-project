@@ -14,10 +14,13 @@ with Sensors, Doors, Console;
 package Adls
 is
 	SPEED_LIMIT: constant Integer:= 4;
+	Auto_Mode_Cnt: Integer:= 0;
+	Previous_Auto_Mode_State : Boolean := False;
 procedure Controller
-	with
+with
 	Global => (Input => (Sensors.SensorState, Console.AutoState),
-			   In_Out => (Doors.LockedState, Console.IndicatorState)),
+			   In_Out => (Doors.LockedState, Console.IndicatorState, Auto_Mode_Cnt, Previous_Auto_Mode_State)),
 	Depends => (Doors.LockedState => (Sensors.SensorState, Doors.LockedState, Console.AutoState),
-				Console.IndicatorState => (Sensors.SensorState, Doors.LockedState, Console.IndicatorState, Console.AutoState ));
+				Console.IndicatorState => (Sensors.SensorState, Console.IndicatorState, Console.AutoState), 
+				Auto_Mode_Cnt => (Auto_Mode_Cnt, Console.AutoState, Previous_Auto_Mode_State), Previous_Auto_Mode_State => (Console.AutoState));
 end Adls;

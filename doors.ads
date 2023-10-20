@@ -24,7 +24,7 @@ is
    function Locked return Boolean
    with
      Global => (Input => LockedState),
-     Depends => (Locked'Result => LockedState);
-
+	   Depends => (Locked'Result => LockedState),
+	   Pre => true;
 end Doors;
 

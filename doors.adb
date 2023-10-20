@@ -3,8 +3,9 @@
 -- Created:             11.10.2023
 -- Description:         Models the car door locking subsystem.
 pragma SPARK_MODE (On);
+package body Doors 
 
-package body Doors is
+is
 
 	procedure Unlock
 	is
@@ -24,5 +25,6 @@ package body Doors is
 		return LockedState;
 	end Locked;
 
+begin -- initialization
+   LockedState:= False;
 end Doors;
-

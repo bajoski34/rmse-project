@@ -40,4 +40,7 @@ is
 		return AutoState;
 	end Auto_Mode_Enabled;
 
+begin -- initialization
+   IndicatorState:= False;
+   AutoState:= FALSE;
 end Console;

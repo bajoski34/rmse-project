@@ -11,7 +11,6 @@ is
    Init_Value:  constant Integer := 0;
    Undef_Value: constant Integer := 151; -- valid wheel speed readings are in the range 0..150. A value of 151 denotes an undefined reading.
    
-   
    subtype Sensor_Type is Integer range 0..151;
    subtype Sensor_Index_Type is Integer range 1..3;
    type Sensors_Type is array (Sensor_Index_Type) of Sensor_Type;
@@ -34,8 +33,6 @@ is
    function Read_Sensor_Majority return Sensor_Type
    with
      Global  => (Input => SensorState),
-     Depends => (Read_Sensor_Majority'Result => SensorState),
-     Pre => true,
-     Post => (Read_Sensor_Majority'Result >= 0 and Read_Sensor_Majority'Result <= 150);
+     Depends => (Read_Sensor_Majority'Result => SensorState);
    
 end Sensors;

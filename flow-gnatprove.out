@@ -1,0 +1,44 @@
+Summary of SPARK analysis
+=========================
+
+--------------------------------------------------------------------------------------------
+SPARK Analysis results        Total         Flow   CodePeer   Provers   Justified   Unproved
+--------------------------------------------------------------------------------------------
+Data Dependencies                13           13          .         .           .          .
+Flow Dependencies                13           13          .         .           .          .
+Initialization                    8            8          .         .           .          .
+Non-Aliasing                      .            .          .         .           .          .
+Run-time Checks                   .            .          .         .           .          .
+Assertions                        .            .          .         .           .          .
+Functional Contracts              .            .          .         .           .          .
+LSP Verification                  .            .          .         .           .          .
+Termination                       .            .          .         .           .          .
+Concurrency                       .            .          .         .           .          .
+--------------------------------------------------------------------------------------------
+Total                            34    34 (100%)          .         .           .          .
+
+
+max steps used for successful proof: 0
+
+Analyzed 4 units
+in unit adls, 2 subprograms and packages out of 2 analyzed
+  Adls at adls.ads:14 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Adls.Controller at adls.ads:19 flow analyzed (0 errors, 0 checks and 0 warnings)
+in unit console, 7 subprograms and packages out of 7 analyzed
+  Console at console.ads:7 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Console.Auto_Mode_Enabled at console.ads:40 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Console.Disable_Auto_Mode at console.ads:35 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Console.Disable_Indicator at console.ads:20 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Console.Enable_Auto_Mode at console.ads:30 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Console.Enable_Indicator at console.ads:15 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Console.Indicator_Enabled at console.ads:25 flow analyzed (0 errors, 0 checks and 0 warnings)
+in unit doors, 4 subprograms and packages out of 4 analyzed
+  Doors at doors.ads:7 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Doors.Lock at doors.ads:19 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Doors.Locked at doors.ads:24 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Doors.Unlock at doors.ads:14 flow analyzed (0 errors, 0 checks and 0 warnings)
+in unit sensors, 4 subprograms and packages out of 4 analyzed
+  Sensors at sensors.ads:6 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Sensors.Read_Sensor at sensors.ads:27 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Sensors.Read_Sensor_Majority at sensors.ads:33 flow analyzed (0 errors, 0 checks and 0 warnings)
+  Sensors.Write_Sensors at sensors.ads:20 flow analyzed (0 errors, 0 checks and 0 warnings)

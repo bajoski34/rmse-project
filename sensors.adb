@@ -17,25 +17,24 @@ package body Sensors is
         return SensorState(Sensor_Index);
     end Read_Sensor;
 
-    function Read_Sensor_Majority return Sensor_Type is
-        Value_Counts: array (Sensor_Index_Type'Range) of Natural := (others => 0);
-        Majority_Value: Sensor_Type;
+	function Read_Sensor_Majority return Sensor_Type is
+    	Majority_Value : Sensor_Type;
+    	Majority_Count : Integer := 0;
     begin
-        -- Count the occurrences of each sensor value
+		Majority_Value := 0;
         for I in Sensor_Index_Type loop
-            Value_Counts(SensorState(I)) := Value_Counts(SensorState(I)) + 1;
-        end loop;
-
-        -- Find the value with the maximum count
-        Majority_Value := Sensor_Type'First;
-        for V in Sensor_Type'Range loop
-            if Value_Counts(V) > Value_Counts(Majority_Value) then
-                Majority_Value := V;
+            if Majority_Count = 0 then
+                Majority_Value := SensorState(I);
+                Majority_Count := 1;
+            elsif Majority_Value = SensorState(I) then
+                Majority_Count := Majority_Count + 1;
+            else
+                Majority_Count := Majority_Count - 1;
             end if;
         end loop;
-
         return Majority_Value;
     end Read_Sensor_Majority;
 
-
+begin -- initialization
+   SensorState:= (0,0,0);
 end Sensors;
